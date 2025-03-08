@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webapp</title>
+    <link rel="stylesheet" href="../static/webapp.css">
+</head>
+<body>
+    <div class = 'top-sec'>
+        <h1> Welcome to my webapp </h1>
+        <div class = 'dropdown'>
+            <div class = 'select'>
+                <span class = 'selected'>Create User</span>
+                <div class = 'caret'></div>
+            </div>
+            <ul class = 'menu'>
+                <li class = 'active' data-target = 'create_block'>Create Account</li>
+                <li data-target = 'login_block'>Login</li>
+                <li data-target = 'username-block'>Update Username</li>
+                <li data-target= 'password-block'>Update Password</li>
+                <li data-target = 'view-block'>View Accounts</li>
+                <li data-target = 'clear-block'>Clear</li>
+            </ul>
+        </div>
+    </div>
+    <div class = "input visible" id = 'create_block'>
+        <h2>Create Account</h2>
+        <form id = "creation_form">
+            <input type = "text" name = "first_name" placeholder= "First Name">
+            <input type = "text" name = "last_name" placeholder= "Last Name">
+            <input type = "text" name = "username" placeholder= "Username">
+            <input type = "text" name = "email_address" placeholder= "Email Address">
+            <input type = "text" name = "password" placeholder= "Password">
+            <input type = "text" name = "salt" placeholder= "Salt">
+            <button id = "create_button" type = "submit">Submit</button>
+        </form>
+        <h3 id = "creation_status"></h3>
+    </div>
+    <div class = "input" id = "login_block">
+        <h2>Login</h2>
+        <form id = "login_form">
+            <input type = "text" name = "username" placeholder = "Username">
+            <input type = "text" name = "password" placeholder= "Password">
+            <button type = "submit" id = "login_button">Submit</button>
+        </form>
+        <h3 id = "login_status"></h3>
+    </div>
+    <div class = "input" id = 'username-block'>
+        <h2>Update Username</h2>
+        <form id = "user_update_form">
+            <input type = "text" name = "username" placeholder = "Old Username">
+            <input type = "text" name = "new_username" placeholder = "New Username">
+            <input type = "text" name = "jwt" placeholder = "JWT">
+            <button type = "submit" id = "user_update_button">Submit</button>
+        </form>
+        <h3 id = "user_update_status"></h3>
+    </div>
+    <div class = "input" id = 'password-block'>
+        <h2>Update Password</h2>
+        <form id = "password_update_form">
+            <input type = "text" name = "password" placeholder = "Old Password">
+            <input type = "text" name = "new_password" placeholder = "New Password">
+            <input type = "text" name = "jwt" placeholder = "JWT">
+            <button type = "submit" id = "password_update_button">Submit</button>
+        </form>
+        <h3 id = "password_update_status"></h3>
+    </div>
+    <div class = "input" id = 'view-block'>
+        <h2>View Account Info</h2>
+        <form id = "view_form">
+            <input type = "text" name = "jwt" placeholder = "JWT">
+            <button type = "submit" id = "view_button">Submit</button>
+        </form>
+        <h3 id = "view_status"></h3>
+    </div>
+    <div class = "input" id = 'clear-block'>
+        <h2>Clear</h2>
+        <form action = "/clear" method = "GET">
+             <button type = "submit" id = "clear_button">CLEAR</button>
+        </form>
+    </div>
+    <script src="../static/webapp.js"></script>
+</body>
+</html>
